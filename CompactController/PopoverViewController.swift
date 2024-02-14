@@ -18,9 +18,7 @@ private enum Metrics {
 }
 
 final class PopoverViewController: UIViewController {
-    
-    var segmentedControlDelegate: SegmentedControlDelegate?
-    
+        
     private var viewIsLayedOutFirstTime = false
 
     private let heightSegmentedControl = UISegmentedControl()
@@ -85,7 +83,10 @@ final class PopoverViewController: UIViewController {
     }
     
     @objc private func heightSegmentedControlTapped() {
-        segmentedControlDelegate?.valueChanged(index: heightSegmentedControl.selectedSegmentIndex)
+        let index = heightSegmentedControl.selectedSegmentIndex
+        let newHeight: CGFloat = index == 0 ? 280 : 150
+        
+        preferredContentSize.height = newHeight
     }
     
     @objc private func closeButtonTapped() {

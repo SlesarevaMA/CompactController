@@ -18,7 +18,6 @@ private enum Metrics {
 
 final class ViewController: UIViewController {
     
-    private var popoverController: PopoverViewController?
     private let presentButton = UIButton()
 
     override func viewDidLoad() {
@@ -40,33 +39,12 @@ final class ViewController: UIViewController {
     }
     
     @objc private func presentButtonTapped() {
-        popoverController = PopoverViewController()
-        popoverController?.segmentedControlDelegate = self
-        popoverController?.modalPresentationStyle = .popover
-        popoverController?.preferredContentSize = CGSize(width: Metrics.popoverWidth, height: Metrics.popoverHieght)
-        popoverController?.popoverPresentationController?.sourceView = presentButton
-        popoverController?.loadViewIfNeeded()
+        let popoverController = PopoverViewController()
+        popoverController.modalPresentationStyle = .popover
+        popoverController.preferredContentSize = CGSize(width: Metrics.popoverWidth, height: Metrics.popoverHieght)
+        popoverController.popoverPresentationController?.sourceView = presentButton
+        popoverController.loadViewIfNeeded()
         
-        if let popoverController {
-            present(popoverController, animated: true)
-        }
-    }
-}
-
-extension ViewController: SegmentedControlDelegate {
-    func valueChanged(index: Int) {
-        
-        let height: CGFloat
-        
-        switch index {
-        case 0:
-            height = 280
-        case 1:
-            height = 150
-        default:
-            return
-        }
-        
-        popoverController?.preferredContentSize = CGSize(width: Metrics.popoverWidth, height: height)
+        present(popoverController, animated: true)
     }
 }
