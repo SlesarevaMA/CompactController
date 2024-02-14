@@ -12,7 +12,8 @@
 		5CD56AF72B7AE6F80022C982 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56AF62B7AE6F80022C982 /* ViewController.swift */; };
 		5CD56AFC2B7AE6F90022C982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD56AFB2B7AE6F90022C982 /* Assets.xcassets */; };
 		5CD56AFF2B7AE6F90022C982 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD56AFD2B7AE6F90022C982 /* LaunchScreen.storyboard */; };
-		5CD56B072B7BA4290022C982 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56B062B7BA4290022C982 /* ChildViewController.swift */; };
+		5CD56B072B7BA4290022C982 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56B062B7BA4290022C982 /* PopoverViewController.swift */; };
+		5CD56B092B7CED070022C982 /* SegmentedControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD56B082B7CED070022C982 /* SegmentedControlDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		5CD56AFB2B7AE6F90022C982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CD56AFE2B7AE6F90022C982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CD56B002B7AE6F90022C982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CD56B062B7BA4290022C982 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		5CD56B062B7BA4290022C982 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		5CD56B082B7CED070022C982 /* SegmentedControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				5CD56AF22B7AE6F80022C982 /* AppDelegate.swift */,
 				5CD56AF42B7AE6F80022C982 /* SceneDelegate.swift */,
-				5CD56B062B7BA4290022C982 /* ChildViewController.swift */,
+				5CD56B062B7BA4290022C982 /* PopoverViewController.swift */,
+				5CD56B082B7CED070022C982 /* SegmentedControlDelegate.swift */,
 				5CD56AF62B7AE6F80022C982 /* ViewController.swift */,
 				5CD56AFB2B7AE6F90022C982 /* Assets.xcassets */,
 				5CD56AFD2B7AE6F90022C982 /* LaunchScreen.storyboard */,
@@ -139,8 +142,9 @@
 			files = (
 				5CD56AF72B7AE6F80022C982 /* ViewController.swift in Sources */,
 				5CD56AF32B7AE6F80022C982 /* AppDelegate.swift in Sources */,
+				5CD56B092B7CED070022C982 /* SegmentedControlDelegate.swift in Sources */,
 				5CD56AF52B7AE6F80022C982 /* SceneDelegate.swift in Sources */,
-				5CD56B072B7BA4290022C982 /* ChildViewController.swift in Sources */,
+				5CD56B072B7BA4290022C982 /* PopoverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

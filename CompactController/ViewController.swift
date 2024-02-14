@@ -7,9 +7,18 @@
 
 import UIKit
 
+private enum Metrics {
+    static let popoverWidth: CGFloat = 300
+    static let presentButtonTitleColor: UIColor = .systemBlue
+    static let shadowColor: UIColor = .systemGray5
+    
+    static let shadowRadius: CGFloat = 10
+    static let shadowOpacity: Float = 0.8
+}
+
 final class ViewController: UIViewController {
     
-    private var childViewController: UIViewController?
+    private var popoverController: PopoverViewController?
     private let presentButton = UIButton()
 
     override func viewDidLoad() {
@@ -26,18 +35,38 @@ final class ViewController: UIViewController {
         ])
         
         presentButton.setTitle("Present", for: .normal)
-        presentButton.setTitleColor(.systemBlue, for: .normal)
+        presentButton.setTitleColor(Metrics.presentButtonTitleColor, for: .normal)
         presentButton.addTarget(self, action: #selector(presentButtonTapped), for: .touchUpInside)
     }
     
     @objc private func presentButtonTapped() {
-//        if childViewController == nil {
-//            
-//        }
+        popoverController = PopoverViewController()
+        popoverController?.segmentedControlDelegate = self
+        popoverController?.modalPresentationStyle = .popover
+        popoverController?.preferredContentSize = CGSize(width: Metrics.popoverWidth, height: 280)
+        popoverController?.popoverPresentationController?.sourceView = presentButton
+        popoverController?.loadViewIfNeeded()
         
+        if let popoverController {
+            present(popoverController, animated: true)
+        }
+    }
+}
+
+extension ViewController: SegmentedControlDelegate {
+    func valueChanged(index: Int) {
         
-        present(ChildViewController(), animated: true)
+        let height: CGFloat
         
-//        addChild(viewController)
+        switch index {
+        case 0:
+            height = 280
+        case 1:
+            height = 150
+        default:
+            return
+        }
+        
+        popoverController?.preferredContentSize = CGSize(width: Metrics.popoverWidth, height: height)
     }
 }
