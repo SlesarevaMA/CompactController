@@ -8,7 +8,13 @@
 import UIKit
 
 private enum Metrics {
-    static let spacing: CGFloat = 8
+    static let horizontalSpacing: CGFloat = 8
+    static let verticalSpacing: CGFloat = 20
+
+    static let closeButtonHeight: CGFloat = 30
+    
+    static let closeButtonBackgroundColor: UIColor = .systemGray5
+    static let closeButtonTintColor: UIColor = .gray
 }
 
 final class PopoverViewController: UIViewController {
@@ -51,11 +57,11 @@ final class PopoverViewController: UIViewController {
     private func addConstraints() {
         NSLayoutConstraint.activate([
             heightSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            heightSegmentedControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            heightSegmentedControl.topAnchor.constraint(equalTo: view.topAnchor, constant: Metrics.verticalSpacing),
             
             closeButton.centerYAnchor.constraint(equalTo: heightSegmentedControl.centerYAnchor),
-            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Metrics.spacing),
-            closeButton.heightAnchor.constraint(equalToConstant: 30),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Metrics.horizontalSpacing),
+            closeButton.heightAnchor.constraint(equalToConstant: Metrics.closeButtonHeight),
             closeButton.widthAnchor.constraint(equalTo: closeButton.heightAnchor)
         ])
     }
@@ -69,8 +75,8 @@ final class PopoverViewController: UIViewController {
         heightSegmentedControl.addTarget(self, action: #selector(heightSegmentedControlTapped), for: .valueChanged)
         
         closeButton.setImage(UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        closeButton.tintColor = .gray
-        closeButton.backgroundColor = .systemGray5
+        closeButton.tintColor = Metrics.closeButtonTintColor
+        closeButton.backgroundColor = Metrics.closeButtonBackgroundColor
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     }
     

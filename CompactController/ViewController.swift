@@ -9,9 +9,9 @@ import UIKit
 
 private enum Metrics {
     static let popoverWidth: CGFloat = 300
+    static let popoverHieght: CGFloat = 280
     static let presentButtonTitleColor: UIColor = .systemBlue
     static let shadowColor: UIColor = .systemGray5
-    
     static let shadowRadius: CGFloat = 10
     static let shadowOpacity: Float = 0.8
 }
@@ -43,7 +43,7 @@ final class ViewController: UIViewController {
         popoverController = PopoverViewController()
         popoverController?.segmentedControlDelegate = self
         popoverController?.modalPresentationStyle = .popover
-        popoverController?.preferredContentSize = CGSize(width: Metrics.popoverWidth, height: 280)
+        popoverController?.preferredContentSize = CGSize(width: Metrics.popoverWidth, height: Metrics.popoverHieght)
         popoverController?.popoverPresentationController?.sourceView = presentButton
         popoverController?.loadViewIfNeeded()
         
